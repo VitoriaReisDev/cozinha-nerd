@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozinha Nerd</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Cozinha Nerd</div>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="filtrar('todos')">Início</a></li>
+                <li><a href="#" onclick="filtrar('favoritos')">Favoritos</a></li>
+            </ul>
+        </nav>
+        <div class="search-box">
+            <input type="text" id="input-busca" placeholder="Pesquisar receita..." onkeyup="verificarEnter(event)">
+            <button onclick="pesquisar()">🔍</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2>Cozinha as receitas favoritas das tuas séries, filmes, desenhos e animes!</h2>
+    </section>
+
+    <section class="filtros-section">
+        <div class="filtros-container">
+            <button class="btn-filtro" onclick="filtrar('todos')">Todos</button>
+            <button class="btn-filtro" onclick="filtrar('Filmes')">Filmes</button>
+            <button class="btn-filtro" onclick="filtrar('Séries')">Séries</button>
+            <button class="btn-filtro" onclick="filtrar('Desenhos')">Desenhos</button>
+            <button class="btn-filtro" onclick="filtrar('Animes')">Animes</button>
+            <button class="btn-filtro" onclick="filtrar('Jogos')">Jogos</button>
+            <button class="btn-filtro" onclick="filtrar('Quadrinhos')">Quadrinhos</button>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="receitas-grid">
+            
+            <div class="card" data-categoria="Desenhos">
+                <button class="btn-favorito" onclick="toggleFavorito(this)">🤍</button>
+                <div class="card-tags">
+                    <span class="tag-tipo">Desenhos</span>
+                    <span class="tag-nome">Dama e o Vagabundo</span>
+                </div>
+                <img src="fotos/macarrao.jpg" alt="Macarrão com Almôndegas da Dama e o Vagabundo">
+                <h3>Macarrão com Almôndegas</h3>
+                <div class="card-info">
+                    <p>Um clássico italiano à luz de velas, direto do beco mais romântico dos desenhos.</p>
+                </div>
+                <a href="receita.html?id=macarrao">Ver Receita</a>
+            </div>
+
+            <div class="card" data-categoria="Jogos">
+                <button class="btn-favorito" onclick="toggleFavorito(this)">🤍</button>
+                <div class="card-tags">
+                    <span class="tag-tipo">Jogos</span>
+                    <span class="tag-nome">Doki Doki</span>
+                </div>
+                <img src="fotos/cupcake.jpg" alt="Cupcake da Natsuki">
+                <h3>Cupcake da Natsuki</h3>
+                <div class="card-info">
+                    <p>Um delicioso cupcake que traz alegria ao coração de qualquer fã.</p>
+                </div>
+                <a href="receita.html?id=cupcake">Ver Receita</a>
+            </div>
+
+            <div class="card" data-categoria="Filmes">
+                <button class="btn-favorito" onclick="toggleFavorito(this)">🤍</button>
+                <div class="card-tags">
+                    <span class="tag-tipo">Filmes</span>
+                    <span class="tag-nome">Harry Potter</span>
+                </div>
+                <img src="fotos/cerveja.jpg" alt="Cerveja Amanteigada de Harry Potter">
+                <h3>Cerveja Amanteigada</h3>
+                <div class="card-info">
+                    <p>Uma cerveja amanteigada que traz o sabor da magia de Harry Potter.</p>
+                </div>
+                <a href="receita.html?id=cerveja">Ver Receita</a>
+            </div>
+
+            <div class="card" data-categoria="Desenhos">
+                <button class="btn-favorito" onclick="toggleFavorito(this)">🤍</button>
+                <div class="card-tags">
+                    <span class="tag-tipo">Desenhos</span>
+                    <span class="tag-nome">Bob Esponja</span>
+                </div>
+                <img src="fotos/hamburguer.jpg" alt="Hambúrguer de Siri do Bob Esponja">
+                <h3>Hambúrguer de Siri</h3>
+                <div class="card-info">
+                    <p>Um hambúrguer delicioso que traz a diversão do mundo de Bob Esponja.</p>
+                </div>
+                <a href="receita.html?id=hamburguer">Ver Receita</a>
+            </div>
+
+            <div class="card" data-categoria="Filmes">
+                <button class="btn-favorito" onclick="toggleFavorito(this)">🤍</button>
+                <div class="card-tags">
+                    <span class="tag-tipo">Filmes</span>
+                    <span class="tag-nome">Matilda</span>
+                </div>
+                <img src="fotos/Matilda.jpg" alt="Bolo de Chocolate da Matilda">
+                <h3>Bolo de Chocolate</h3>
+                <div class="card-info">
+                    <p>Delicioso bolo de chocolate clássico do filme Matilda.</p>
+                </div>
+                <a href="receita.html?id=matilda">Ver Receita</a>
+            </div>
+
+            <div class="card" data-categoria="Quadrinhos">
+                <button class="btn-favorito" onclick="toggleFavorito(this)">🤍</button>
+                <div class="card-tags">
+                    <span class="tag-tipo">Quadrinhos</span>
+                    <span class="tag-nome">Garfield</span>
+                </div>
+                <img src="fotos/lasanha.jpg" alt="Lasanha do Garfield">
+                <h3>Lasanha do Garfield</h3>
+                <div class="card-info">
+                    <p>Uma lasanha deliciosa do personagem mais faminto dos quadrinhos.</p>
+                </div>
+                <a href="receita.html?id=lasanha">Ver Receita</a>
+            </div>
+
+            <div class="card" data-categoria="Desenhos">
+                <button class="btn-favorito" onclick="toggleFavorito(this)">🤍</button>
+                <div class="card-tags">
+                    <span class="tag-tipo">Desenhos</span>
+                    <span class="tag-nome">Os Simpsons</span>
+                </div>
+                <img src="fotos/donut.jpg" alt="Donuts do Homer Simpson">
+                <h3>Donuts do Homer</h3>
+                <div class="card-info">
+                    <p>Os famosos Donuts rosados de Homer Simpson.</p>
+                </div>
+                <a href="receita.html?id=donut">Ver Receita</a>
+            </div>
+
+            <div class="card" data-categoria="Animes">
+                <button class="btn-favorito" onclick="toggleFavorito(this)">🤍</button>
+                <div class="card-tags">
+                    <span class="tag-tipo">Animes</span>
+                    <span class="tag-nome">Naruto</span>
+                </div>
+                <img src="fotos/lamen.jpg" alt="Lamen do Naruto">
+                <h3>Lamen do Naruto</h3>
+                <div class="card-info">
+                    <p>O prato mais famoso da cultura japonesa nos animes.</p>
+                </div>
+                <a href="receita.html?id=lamen">Ver Receita</a>
+            </div>
+
+            <div class="card" data-categoria="Filmes">
+                <button class="btn-favorito" onclick="toggleFavorito(this)">🤍</button>
+                <div class="card-tags">
+                    <span class="tag-tipo">Filmes</span>
+                    <span class="tag-nome">Castelo Animado</span>
+                </div>
+                <img src="fotos/cafe.jpg" alt="Café da manhã de O Castelo Animado">
+                <h3>Café da Manhã Mágico</h3>
+                <div class="card-info">
+                    <p>Um café da manhã delicioso inspirado no filme de animação.</p>
+                </div>
+                <a href="receita.html?id=cafe">Ver Receita</a>
+            </div>
+
+            <div class="card" data-categoria="Desenhos">
+                <button class="btn-favorito" onclick="toggleFavorito(this)">🤍</button>
+                <div class="card-tags">
+                    <span class="tag-tipo">Desenhos</span>
+                    <span class="tag-nome">Pica Pau</span>
+                </div>
+                <img src="fotos/torta.jpg" alt="Torta de Manteiga Escocesa de Pica Pau">
+                <h3>Torta Escocesa</h3>
+                <div class="card-info">
+                    <p>Torta de manteiga escocesa que dá água na boca.</p>
+                </div>
+                <a href="receita.html?id=torta">Ver Receita</a>
+            </div>
+
+            <div class="card" data-categoria="Desenhos">
+                <button class="btn-favorito" onclick="toggleFavorito(this)">🤍</button>
+                <div class="card-tags">
+                    <span class="tag-tipo">Desenhos</span>
+                    <span class="tag-nome">Steven Universo</span>
+                </div>
+                <img src="fotos/biscoito.jpg" alt="Biscoito Gatinho de Steven Universo">
+                <h3>Biscoito Gatinho</h3>
+                <div class="card-info">
+                    <p>Um biscoito divertido que traz magia de verdade!</p>
+                </div>
+                <a href="receita.html?id=biscoito">Ver Receita</a>
+            </div>
+
+            <div class="card" data-categoria="Desenhos">
+                <button class="btn-favorito" onclick="toggleFavorito(this)">🤍</button>
+                <div class="card-tags">
+                    <span class="tag-tipo">Desenhos</span>
+                    <span class="tag-nome">Hora de Aventura</span>
+                </div>
+                <img src="fotos/panquecas.jpg" alt="Panquecas de toicinho de Hora de Aventura">
+                <h3>Panquecas de Toicinho</h3>
+                <div class="card-info">
+                    <p>As clássicas panquecas de bacon do Jake.</p>
+                </div>
+                <a href="receita.html?id=panquecas">Ver Receita</a>
+            </div>
+
+            <div class="card" data-categoria="Desenhos">
+                <button class="btn-favorito" onclick="toggleFavorito(this)">🤍</button>
+                <div class="card-tags">
+                    <span class="tag-tipo">Desenhos</span>
+                    <span class="tag-nome">Apenas um Show</span>
+                </div>
+                <img src="fotos/sanduiche.jpg" alt="Sanduiche Mortal de Apenas um Show">
+                <h3>Sanduíche Mortal</h3>
+                <div class="card-info">
+                    <p>Sanduíche lendário, será que você consegue encarar?</p>
+                </div>
+                <a href="receita.html?id=sanduiche">Ver Receita</a>
+            </div>
+
+            <div class="card" data-categoria="Séries">
+                <button class="btn-favorito" onclick="toggleFavorito(this)">🤍</button>
+                <div class="card-tags">
+                    <span class="tag-tipo">Séries</span>
+                    <span class="tag-nome">Todo Mundo Odeia o Chris</span>
+                </div>
+                <img src="fotos/queijo.jpg" alt="Macarrão com queijo de Todo Mundo Odeia o Chris">
+                <h3>Macarrão com Queijo</h3>
+                <div class="card-info">
+                    <p>O famoso macarrão com queijo do Greg e da Rochelle.</p>
+                </div>
+                <a href="receita.html?id=queijo">Ver Receita</a>
+            </div>
+
+            <div class="card" data-categoria="Animes">
+                <button class="btn-favorito" onclick="toggleFavorito(this)">🤍</button>
+                <div class="card-tags">
+                    <span class="tag-tipo">Animes</span>
+                    <span class="tag-nome">Saiki Kusuo</span>
+                </div>
+                <img src="fotos/gelatina.jpg" alt="Gelatina de café do Saiki Kusuo">
+                <h3>Gelatina de Café</h3>
+                <div class="card-info">
+                    <p>A sobremesa favorita do Saiki para dar energia.</p>
+                </div>
+                <a href="receita.html?id=gelatina">Ver Receita</a>
+            </div>
+
+            <div class="card" data-categoria="Jogos">
+                <button class="btn-favorito" onclick="toggleFavorito(this)">🤍</button>
+                <div class="card-tags">
+                    <span class="tag-tipo">Jogos</span>
+                    <span class="tag-nome">RDR2</span>
+                </div>
+                <img src="fotos/ensopado.jpg" alt="Ensopado do Pearson de Red Dead Redemption 2">
+                <h3>Ensopado do acampamento</h3>
+                <div class="card-info">
+                    <p>O ensopado do Pearson direto do acampamento do Van der Linde.</p>
+                </div>
+                <a href="receita.html?id=ensopado">Ver Receita</a>
+            </div>
+
+            <div class="card" data-categoria="Filmes">
+                <button class="btn-favorito" onclick="toggleFavorito(this)">🤍</button>
+                <div class="card-tags">
+                    <span class="tag-tipo">Filmes</span>
+                    <span class="tag-nome">Viagem de Chihiro</span>
+                </div>
+                <img src="fotos/onigiri.jpg" alt="Onigiri de atum da Viagem de Chihiro">
+                <h3>Onigiri da Chihiro</h3>
+                <div class="card-info">
+                    <p>Prato reconfortante e tradicional da cultura japonesa.</p>
+                </div>
+                <a href="receita.html?id=onigiri">Ver Receita</a>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p style="text-align: center; padding: 30px; color: #b2a3c7; font-size: 13px;">Sugestão de receitas? Envie um e-mail para receitas@cozinhanerd.com</p>
+    </footer>
+
+    <script>
+        // Função para favoritar o card ao clicar no coração
+        function toggleFavorito(botao) {
+            const card = botao.closest('.card');
+            
+            if (card.classList.contains('favorito')) {
+                card.classList.remove('favorito');
+                botao.textContent = '🤍';
+            } else {
+                card.classList.add('favorito');
+                botao.textContent = '❤️';
+            }
+        }
+
+        // Função de filtro atualizada para incluir a aba de Favoritas
+        function filtrar(categoria) {
+            const cards = document.querySelectorAll('.card');
+            
+            cards.forEach(card => {
+                const catCard = card.getAttribute('data-categoria');
+                const ehFavorito = card.classList.contains('favorito');
+                
+                if (categoria === 'todos') {
+                    card.style.display = 'flex';
+                } else if (categoria === 'favoritos') {
+                    if (ehFavorito) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                } else {
+                    if (catCard === categoria) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        function pesquisar() {
+            const input = document.getElementById('input-busca').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                const titulo = card.querySelector('h3').textContent.toLowerCase();
+                const descricao = card.querySelector('.card-info p').textContent.toLowerCase();
+                const tagNome = card.querySelector('.tag-nome').textContent.toLowerCase();
+
+                if (titulo.includes(input) || descricao.includes(input) || tagNome.includes(input)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function verificarEnter(event) {
+            if (event.key === 'Enter') {
+                pesquisar();
+            }
+        }
+    </script>
+</body>
+</html>

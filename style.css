@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+:root {
+    --bg-dark: #120919;
+    --bg-header: #1c0d2b;
+    --bg-card: #231238;
+    --primary-neon: #ff2a8d;
+    --purple-glow: #a855f7;
+    --text-light: #ffffff;
+    --text-muted: #b2a3c7;
+    --border-radius: 18px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+header {
+    background-color: var(--bg-header);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(168, 85, 247, 0.2);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--primary-neon);
+    text-transform: uppercase;
+    text-shadow: 0 0 10px var(--primary-neon);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-neon);
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #2b1640;
+    border: 1px solid var(--purple-glow);
+    border-radius: 50px;
+    padding: 5px 15px;
+}
+
+.search-box input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-light);
+    padding: 8px;
+    font-family: inherit;
+}
+
+.search-box button {
+    background: none;
+    border: none;
+    color: var(--primary-neon);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 20px 20px 20px;
+}
+
+.hero h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.receitas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px rgba(255, 42, 141, 0.4);
+    border-color: var(--primary-neon);
+}
+
+.card-tags {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.tag-tipo {
+    color: var(--purple-glow);
+    text-transform: uppercase;
+}
+
+.tag-nome {
+    background-color: var(--primary-neon);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+
+.card-info {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.card a {
+    display: block;
+    text-align: center;
+    background-color: var(--primary-neon);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(255, 42, 141, 0.5);
+    transition: 0.3s;
+}
+
+.card a:hover {
+    background-color: #e01b7a;
+    box-shadow: 0 0 15px rgba(255, 42, 141, 0.8);
+}
+
+.filtros-section {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.filtros-section h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.filtros-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-filtro {
+    background-color: var(--bg-card);
+    border: 2px solid var(--primary-neon);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-filtro:hover {
+    background-color: var(--primary-neon);
+    box-shadow: 0 0 15px var(--primary-neon);
+}
+
+.card {
+    position: relative; /* Essencial para o coração flutuar sobre o card */
+}
+
+.btn-favorito {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background-color: rgba(28, 13, 43, 0.7);
+    border: 1px solid var(--purple-glow);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.btn-favorito:hover {
+    transform: scale(1.1);
+    background-color: var(--primary-neon);
+}
